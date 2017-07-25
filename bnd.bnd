@@ -12,10 +12,6 @@ Bundle-Icon: Console
 Bundle-Vendor: Antonio Musarra's Blog
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 
--includeresource: \
-	@libs/partner-${project.version}.jar,\
-	@force-wsc-40.1.1.jar
-
 Import-Package: \
 	!com.google.appengine.api.urlfetch,\
 	!org.codehaus.jackson.*,\
@@ -26,5 +22,10 @@ Import-Package: \
 	*
 
 Export-Package: \
-	com.sforce.soap.partner.*,\
-	com.sforce.ws.*
+	com.sforce.soap.partner.*;version="1.0.0",\
+	com.sforce.async.*;version="1.0.0",\
+	com.sforce.bulk.*;version="1.0.0",\
+	com.sforce.ws.*;version="1.0.0"
+
+-includeresource: \
+	@libs/partner-${project.version}.jar

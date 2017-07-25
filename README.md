@@ -1,13 +1,53 @@
 
 # Salesforce SOAP API Client Bundle
-This project implements an OSGi bundle to interact with Salesforge SOAP APIs. The OSGi bundle is created through the Force.com Web Service Connector (WSC) version 40.1.1 and export this package:
+This project implements an OSGi bundle to interact with Salesforge SOAP APIs. The OSGi bundle is created through the **Force.com Web Service Connector (WSC) version 40.1.1** and export this package:
 
-	1. com.sforce.soap.partner.*
-	2. com.sforce.ws.*
+1. com.sforce.soap.partner.*
+2. com.sforce.ws.*
 
-### Resources
-	1. [Introducing SOAP API](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_quickstart_intro.htm)
-	2. [Force.com Web Service Connector (WSC)](https://github.com/forcedotcom/wsc)
+### 1. How to use
+If you need to access Salesforce via the SOAP APIs for your project development, then you could add to your project the dependency of the salesforce-client-soap bundle.
+
+The last version of the bundle is the [1.0.0](https://search.maven.org/#search%7Cga%7C1%7Cit.dontesta.labs.liferay.salesforce.client.soap) available on Maven Central Repository. Below the two dependencies, Gradle or Maven to add to your project.
+
+```xml
+<dependency>
+	<groupId>it.dontesta.labs.liferay.salesforce.client.soap</groupId>
+	<artifactId>salesforce-client-soap</artifactId>
+	<version>1.0.0</version>
+</dependency>
+```
+Code 1 - Maven dependency
+```
+compile group:'it.dontesta.labs.liferay.salesforce.client.soap', name:'salesforce-client-soap', version:'1.0.0'
+```
+Code 2 - Gradle dependency
+
+### 2. How to install in Liferay 7 CE/DXP
+For to install Salesforce SOAP API Client bundle in Liferay instance, we could proceed in two way:
+
+1. Download the bundle JAR [salesforce-client-soap (v1.0.0)](http://repo1.maven.org/maven2/it/dontesta/labs/liferay/salesforce/client/soap/salesforce-client-soap/1.0.0/salesforce-client-soap-1.0.0.jar) from Maven repository and deploy to Liferay (via auto deploy directory or directly in $LIFERAY_HOME/osgi/modules);
+2. Install via Gogo Shell (through install command)
+
+```c
+$ telnel localhost 11311
+g! install http://repo1.maven.org/maven2/it/dontesta/labs/liferay/salesforce/client/soap/salesforce-client-soap/1.0.0/salesforce-client-soap-1.0.0.jar
+g! Bundle ID: 582
+```
+Console 1 - Install bundle via Gogo Shell
+
+```c
+$ telenet localhost 11311
+g! lb|grep Salesforce
+  583|Active     |   10|Salesforce SOAP Client (1.0.0)
+```
+Console 2 - Verify the bundle just installed
+
+### 3. Resources
+If you follow this resources you could see how to use Salesforce SOAP API.
+
+1. [Introducing SOAP API](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_quickstart_intro.htm)
+2. [Force.com Web Service Connector (WSC)](https://github.com/forcedotcom/wsc)
 
 ### Project License
 The MIT License (MIT)

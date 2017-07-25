@@ -1,0 +1,30 @@
+Bundle-Name: Salesforce SOAP Client
+Bundle-SymbolicName: it.dontesta.labs.liferay.salesforce.client.soap
+Bundle-Description: Salesforce SOAP Client build with Force.com Web Service Connector (WSC)
+Bundle-Version: 1.0.0-SNAPSHOT
+Bundle-Category: Salesforce
+Bundle-ContactAddress: https://www.dontesta.it/contatti/
+Bundle-Developers: antonio.musarra@gmail.com
+Bundle-DocURL: https://www.dontesta.it/salesforce-client
+Bundle-Copyright: Antonio Musarra's Blog (c) 2017
+Bundle-License: MIT License
+Bundle-Icon: Console
+Bundle-Vendor: Antonio Musarra's Blog
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+
+-includeresource: \
+	@libs/partner-${project.version}.jar,\
+	@force-wsc-40.1.1.jar
+
+Import-Package: \
+	!com.google.appengine.api.urlfetch,\
+	!org.codehaus.jackson.*,\
+	!org.stringtemplate.v4.*,\
+	!org.antlr.runtime.*,\
+	!org.antlr.stringtemplate.*,\
+	!org.apache.commons.*,\
+	*
+
+Export-Package: \
+	com.sforce.soap.partner.*,\
+	com.sforce.ws.*

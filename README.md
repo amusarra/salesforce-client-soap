@@ -1,5 +1,7 @@
 
 # Salesforce SOAP API Client Bundle
+[![Build Status](https://travis-ci.org/amusarra/salesforce-client-soap.svg?branch=master)](https://travis-ci.org/amusarra/salesforce-client-soap)
+
 This project implements an OSGi bundle to interact with Salesforge SOAP APIs. The OSGi bundle is created through the **Force.com Web Service Connector (WSC) version 40.1.1** and export this package:
 
 1. com.sforce.soap.partner.*
@@ -43,7 +45,23 @@ g! lb|grep Salesforce
 ```
 Console 2 - Verify the bundle just installed
 
-### 3. Resources
+### 3. How to install in Apache Karaf 4.x
+
+```c
+karaf@root()> install http://repo1.maven.org/maven2/it/dontesta/labs/liferay/salesforce/client/soap/salesforce-client-soap/1.0.0/salesforce-client-soap-1.0.0.jar
+Bundle ID: 52
+```
+Console 3 - Install on Apache Karaf via Console
+
+```c
+karaf@root()> list
+ID │ State  │ Lvl │ Version            │ Name
+───┼────────┼─────┼────────────────────┼───────────────────────────────────────────────────────────────────────────────
+53 │ Active │  80 │ 1.0.1 			 │ Salesforce SOAP Client
+```
+Console 4 - Verify the bundle just installed
+
+### 4. Resources
 If you follow this resources you could see how to use Salesforce SOAP API.
 
 1. [Introducing SOAP API](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_quickstart_intro.htm)

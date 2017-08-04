@@ -13,6 +13,16 @@ This project implements an OSGi bundle to interact with Salesforge SOAP APIs. Th
 
 This Salesforce SOAP API Client Bundle can be installed in **every [OSGi R6](https://www.osgi.org/developer/downloads/release-6/) compliant container**.
 
+Salesforce provides two different SOAP API WSDLs:
+1. Enterprise WSDL
+2. Partner WSDL
+
+**Enterprise WSDL** is a strongly typed WSDL for customers who want to build an integration with their Salesforce organization.  It is intended primarily for customers.
+
+**Partner WSDL** is a loosely typed WSDL for customers and partners who are building client applications for multiple originations. This WSDL can be used to access data within any organization. It I intended primarily for partners.
+
+This Salesforce SOAP API Client Bundle use the Partner WSDL.
+
 If you want build the OSGi bundle from the source code therefore required:
 1. Sun/Oracle JDK 1.8
 2. Maven 3.2

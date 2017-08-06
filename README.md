@@ -2,7 +2,7 @@
 # Salesforce SOAP API Client OSGi Bundle
 [![Build Status](https://travis-ci.org/amusarra/salesforce-client-soap.svg?branch=master)](https://travis-ci.org/amusarra/salesforce-client-soap)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/it.dontesta.labs.liferay.salesforce.client.soap/salesforce-client-soap/badge.svg)](https://search.maven.org/#artifactdetails%7Cit.dontesta.labs.liferay.salesforce.client.soap%7Csalesforce-client-soap%7C1.0.2%7Cjar)
-[![](https://img.shields.io/badge/download-OSGi%20Bundle-green.svg)](http://repo1.maven.org/maven2/it/dontesta/labs/liferay/salesforce/client/soap/salesforce-client-soap/1.0.1/salesforce-client-soap-1.0.2.jar)
+[![](https://img.shields.io/badge/download-OSGi%20Bundle-green.svg)](http://repo1.maven.org/maven2/it/dontesta/labs/liferay/salesforce/client/soap/salesforce-client-soap/1.0.2/salesforce-client-soap-1.0.2.jar)
 
 [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/antonio_musarra)
 
@@ -42,7 +42,7 @@ consumed only once per version of the API__.*
 To access the current WSDL for your organization, log in to your Salesforce organization and from Setup, 
 enter Generate Partner WSDL in the Quick Find box, then select **Generate Partner WSDL**.
 
-This Salesforce SOAP API Client Bundle use the Partner WSDL and Enterprise WSDL version 40.0
+This Salesforce SOAP API Client Bundle __use the Partner WSDL and Enterprise WSDL version 40.0__
 
 If you want build the OSGi bundle from the source code therefore required:
 1. Sun/Oracle JDK 1.8

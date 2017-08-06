@@ -23,9 +23,11 @@ Import-Package: \
 
 Export-Package: \
 	com.sforce.soap.partner.*;version="1.0.0",\
+	com.sforce.soap.enterprise.*;version="1.0.0",\
 	com.sforce.async.*;version="1.0.0",\
 	com.sforce.bulk.*;version="1.0.0",\
 	com.sforce.ws.*;version="1.0.0"
 
 -includeresource: \
-	@libs/partner-${project.version}.jar
+	@libs/partner-${project.version}.jar,\
+	@libs/enterprise-${project.version}.jar

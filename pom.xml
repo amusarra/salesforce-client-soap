@@ -177,23 +177,40 @@
         <version>1.6.0</version>
         <executions>
           <execution>
-            <id>wsc</id>
+            <id>wsc-partner</id>
             <phase>process-sources</phase>
             <goals>
               <goal>exec</goal>
             </goals>
+            <configuration>
+              <executable>java</executable>
+              <arguments>
+                <argument>-DcompileTarget=${java.source}</argument>
+                <argument>-jar</argument>
+                <argument>${basedir}/libs/force-wsc-40.1.1-uber.jar</argument>
+                <argument>${basedir}/src/main/resources/META-INF/wsdl/partner.wsdl</argument>
+                <argument>${basedir}/libs/partner-${project.version}.jar</argument>
+              </arguments>
+            </configuration>
+          </execution>
+          <execution>
+            <id>wsc-enterprise</id>
+            <phase>process-sources</phase>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <configuration>
+              <executable>java</executable>
+              <arguments>
+                <argument>-DcompileTarget=${java.source}</argument>
+                <argument>-jar</argument>
+                <argument>${basedir}/libs/force-wsc-40.1.1-uber.jar</argument>
+                <argument>${basedir}/src/main/resources/META-INF/wsdl/enterprise.wsdl</argument>
+                <argument>${basedir}/libs/enterprise-${project.version}.jar</argument>
+              </arguments>
+            </configuration>
           </execution>
         </executions>
-        <configuration>
-          <executable>java</executable>
-          <arguments>
-            <argument>-DcompileTarget=${java.source}</argument>
-            <argument>-jar</argument>
-            <argument>${basedir}/libs/force-wsc-40.1.1-uber.jar</argument>
-            <argument>${basedir}/src/main/resources/META-INF/wsdl/partner.wsdl</argument>
-            <argument>${basedir}/libs/partner-${project.version}.jar</argument>
-          </arguments>
-        </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

@@ -1,14 +1,16 @@
 
 # Salesforce SOAP API Client OSGi Bundle
 [![Build Status](https://travis-ci.org/amusarra/salesforce-client-soap.svg?branch=master)](https://travis-ci.org/amusarra/salesforce-client-soap)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/it.dontesta.labs.liferay.salesforce.client.soap/salesforce-client-soap/badge.svg)](https://search.maven.org/#artifactdetails%7Cit.dontesta.labs.liferay.salesforce.client.soap%7Csalesforce-client-soap%7C1.0.1%7Cjar)
-[![](https://img.shields.io/badge/download-OSGi%20Bundle-green.svg)](http://repo1.maven.org/maven2/it/dontesta/labs/liferay/salesforce/client/soap/salesforce-client-soap/1.0.1/salesforce-client-soap-1.0.1.jar)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/it.dontesta.labs.liferay.salesforce.client.soap/salesforce-client-soap/badge.svg)](https://search.maven.org/#artifactdetails%7Cit.dontesta.labs.liferay.salesforce.client.soap%7Csalesforce-client-soap%7C1.0.2%7Cjar)
+[![](https://img.shields.io/badge/download-OSGi%20Bundle-green.svg)](http://repo1.maven.org/maven2/it/dontesta/labs/liferay/salesforce/client/soap/salesforce-client-soap/1.0.1/salesforce-client-soap-1.0.2.jar)
 
 [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/antonio_musarra)
 
-This project implements an OSGi bundle to interact with Salesforge SOAP APIs. The OSGi bundle is created through the **Force.com Web Service Connector (WSC) version 40.1.1** and export this package:
+This project implements an OSGi bundle to interact with Salesforge SOAP APIs. The OSGi bundle is created through 
+the **Force.com Web Service Connector (WSC) version 40.1.1** and export this package:
 
 1. com.sforce.soap.partner.*
+2. com.sforce.soap.enterprise.*
 2. com.sforce.ws.*
 
 This Salesforce SOAP API Client Bundle can be installed in **every [OSGi R6](https://www.osgi.org/developer/downloads/release-6/) compliant container**.
@@ -17,11 +19,30 @@ Salesforce provides two different SOAP API WSDLs:
 1. Enterprise WSDL
 2. Partner WSDL
 
-**Enterprise WSDL** is a strongly typed WSDL for customers who want to build an integration with their Salesforce organization.  It is intended primarily for customers.
+**Enterprise Web Services WSDL** used by enterprise developers to build client applications for a single Salesforce organization. 
+The enterprise WSDL is strongly typed, which means that it contains objects and fields with specific data types, 
+such as ``int`` and ``string``. 
 
-**Partner WSDL** is a loosely typed WSDL for customers and partners who are building client applications for multiple originations. This WSDL can be used to access data within any organization. It I intended primarily for partners.
+*Customers who use the enterprise WSDL document must download and re-consume it when 
+changes are made to the custom objects or fields in their org or when they want to use a different version of the API.* 
 
-This Salesforce SOAP API Client Bundle use the Partner WSDL.
+To access the current WSDL for your organization, log in to your Salesforce organization and from Setup, enter 
+Generate Enterprise WSDL in the Quick Find box, then select **Generate Enterprise WSDL**.
+
+**Partner Web Services WSDL** used for client applications that are metadata-driven and dynamic in nature. 
+It is particularly—but not exclusively—useful to Salesforce partners who are building client applications for 
+multiple organizations. As a loosely typed representation of the Salesforce data model that works with 
+name-value pairs of field names and values instead of specific data types, it can be used to access data 
+within any organization. 
+
+*This WSDL is most appropriate for developers of clients that can issue a query call to get information 
+about an object before the client acts on the object. __The partner WSDL document needs to be downloaded and 
+consumed only once per version of the API__.* 
+
+To access the current WSDL for your organization, log in to your Salesforce organization and from Setup, 
+enter Generate Partner WSDL in the Quick Find box, then select **Generate Partner WSDL**.
+
+This Salesforce SOAP API Client Bundle use the Partner WSDL and Enterprise WSDL version 40.0
 
 If you want build the OSGi bundle from the source code therefore required:
 1. Sun/Oracle JDK 1.8
@@ -31,18 +52,18 @@ If you want build the OSGi bundle from the source code therefore required:
 ### 1. How to use
 If you need to access Salesforce via the SOAP APIs for your project development, then you could add to your project the dependency of the salesforce-client-soap bundle.
 
-The last version of the bundle is the [1.0.1](https://search.maven.org/#search%7Cga%7C1%7Cit.dontesta.labs.liferay.salesforce.client.soap) available on Maven Central Repository. Below the two dependencies, Gradle or Maven to add to your project.
+The last version of the bundle is the [1.0.2](https://search.maven.org/#search%7Cga%7C1%7Cit.dontesta.labs.liferay.salesforce.client.soap) available on Maven Central Repository. Below the two dependencies, Gradle or Maven to add to your project.
 
 ```xml
 <dependency>
 	<groupId>it.dontesta.labs.liferay.salesforce.client.soap</groupId>
 	<artifactId>salesforce-client-soap</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 </dependency>
 ```
 Code 1 - Maven dependency
 ```
-compile group:'it.dontesta.labs.liferay.salesforce.client.soap', name:'salesforce-client-soap', version:'1.0.1'
+compile group:'it.dontesta.labs.liferay.salesforce.client.soap', name:'salesforce-client-soap', version:'1.0.2'
 ```
 Code 2 - Gradle dependency
 

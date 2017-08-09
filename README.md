@@ -127,7 +127,7 @@ ID │ State  │ Lvl │ Version │ Name
 ```
 Console 4 - Verify the bundle just installed
 
-### 4. Build bundle from source
+### 4. Build OSGi bundle from source
 If you want can build OSGi bundle from source in this way:
 
 ```sh
@@ -137,9 +137,37 @@ $ mvn clean package
 ```
 Console 5 - Clone & Build the OSGi bundle
 
-Inside the target directory you will find del OSGi bundle JAR (for example: salesforce-client-soap-1.0.2-SNAPSHOT.jar).
+Inside the target directory you will find the OSGi bundle JAR (for example: salesforce-client-soap-1.0.2-SNAPSHOT.jar).
 
-### 5. Resources
+### 5. Build OSGi bundle with its own Enterprise WSDL
+If you want can build OSGi bundle with its own Enterprise WSDL then you proceed:
+
+1. Generate the Enterprise Web Service WSDL for your organization and save locally (for example: enterprise_antonio_musarra_blog.wsdl).
+To generate the WSDL file for your organization follow the guide [Generate or Obtain the Web Service WSDL](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_quickstart_steps_generate_wsdl.htm) 
+2. Clone this repository
+3. Build the source by specifying the location of the Enterprise WSDL (absolute path)
+
+After getting your WSDL you can create your own OSGi bundle this way. Remember to replace 
+```$YOUR_ABSOLUTE_PATH_ENTEPRISE_WSDL``` with the absolute path of the Enterprise WSDL.
+
+```sh
+$ git clone https://github.com/amusarra/salesforce-client-soap.git
+$ cd salesforce-client-soap/
+$ mvn -Dsalesforce.wsdl.enterprise.path=$YOUR_ABSOLUTE_PATH_ENTEPRISE_WSDL clean package
+```
+
+Inside the target directory you will find the OSGi bundle JAR (for example: salesforce-client-soap-1.0.3-SNAPSHOT.jar).
+The following figure shows the content of the bundle showing the custom object of my Salesforce.com instance.
+
+[![Salesforce SOAP API Client OSGi Bundle build from custom Enterprise WSDL](https://www.dontesta.it/wp-content/uploads/2017/08/SalesforceSOAPAPIClientOSGiBundleBuildFromCustomEnterpriseWSDL.png)](https://www.dontesta.it/wp-content/uploads/2017/08/SalesforceSOAPAPIClientOSGiBundleBuildFromCustomEnterpriseWSDL.png)
+
+The figure below shows the use of the OSGi bundle just created as a dependency of another OSGi bundle 
+[Salesforce Liferay Gogo Shell Command Client](https://www.dontesta.it/en/liferay-7-salesforce-com-gogo-shell-command-client/).
+
+[![Salesforce Liferay Gogo Shell Command Client Usage Enterprise SObject](https://www.dontesta.it/wp-content/uploads/2017/08/SalesforceLiferayGogoShellCommandClientUsageEnterpriseSObject.png)](https://www.dontesta.it/wp-content/uploads/2017/08/SalesforceLiferayGogoShellCommandClientUsageEnterpriseSObject.png)
+
+
+### 6. Resources
 If you follow this resources you could see how to use Salesforce SOAP API.
 
 1. [Introducing SOAP API](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_quickstart_intro.htm)

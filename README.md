@@ -50,9 +50,11 @@ If you want build the OSGi bundle from the source code therefore required:
 3. Git tools
 
 ### 1. How to use
-If you need to access Salesforce via the SOAP APIs for your project development, then you could add to your project the dependency of the salesforce-client-soap bundle.
+If you need to access Salesforce via the SOAP APIs for your project development, then you could add to your project 
+the dependency of the salesforce-client-soap bundle.
 
-The last version of the bundle is the [1.0.2](https://search.maven.org/#search%7Cga%7C1%7Cit.dontesta.labs.liferay.salesforce.client.soap) available on Maven Central Repository. Below the two dependencies, Gradle or Maven to add to your project.
+The last version of the bundle is the [1.0.2](https://search.maven.org/#search%7Cga%7C1%7Cit.dontesta.labs.liferay.salesforce.client.soap) 
+available on Maven Central Repository. Below the two dependencies, Gradle or Maven to add to your project.
 
 ```xml
 <dependency>
@@ -67,11 +69,14 @@ compile group:'it.dontesta.labs.liferay.salesforce.client.soap', name:'salesforc
 ```
 Code 2 - Gradle dependency
 
-Using this OSGi bundle, I implemented a series of Gogo Shell commands to interact with Salesforce. The commands are:
+Using this OSGi bundle, I implemented a series of [Gogo Shell commands](https://www.dontesta.it/en/liferay-7-salesforce-com-gogo-shell-command-client/) 
+to interact with Salesforce. The commands are:
 
 1. **salesforce:login**: Login to your Salesforce instance
 2. **salesforce:createAccount**: Create account into your Salesforce instance
 3. **salesforce:getNewestAccount**: Query for the newest accounts
+4. **salesforce:loginEnterprise**: Login to your Salesforce instance using the Enterprise Connection
+5. **salesforce:getNewestAccountEnterprise**: Query for the newest accounts using the Enterprise Connection
 
 The video is a demo of Gogo Shell commands that let you perform operations on Salesforge.
 
@@ -82,12 +87,13 @@ Video 1 - Liferay 7: Demo Salesforce Gogo Shell Command
 ### 2. How to install in Liferay 7 CE/DXP
 For to install Salesforce SOAP API Client bundle in Liferay instance, we could proceed in two way:
 
-1. Download the bundle JAR [salesforce-client-soap (v1.0.1)](http://repo1.maven.org/maven2/it/dontesta/labs/liferay/salesforce/client/soap/salesforce-client-soap/1.0.1/salesforce-client-soap-1.0.1.jar) from Maven repository and deploy to Liferay (via auto deploy directory or directly in *$LIFERAY_HOME/osgi/modules*);
+1. Download the bundle JAR [salesforce-client-soap (v1.0.2)](http://repo1.maven.org/maven2/it/dontesta/labs/liferay/salesforce/client/soap/salesforce-client-soap/1.0.2/salesforce-client-soap-1.0.2.jar) 
+from Maven repository and deploy to Liferay (via auto deploy directory or directly in *$LIFERAY_HOME/osgi/modules*);
 2. Install via Gogo Shell (through install command)
 
 ```sh
 $ telnel localhost 11311
-g! install http://repo1.maven.org/maven2/it/dontesta/labs/liferay/salesforce/client/soap/salesforce-client-soap/1.0.1/salesforce-client-soap-1.0.1.jar
+g! install http://repo1.maven.org/maven2/it/dontesta/labs/liferay/salesforce/client/soap/salesforce-client-soap/1.0.2/salesforce-client-soap-1.0.2.jar
 g! Bundle ID: 582
 ```
 Console 1 - Install bundle via Gogo Shell
@@ -95,15 +101,16 @@ Console 1 - Install bundle via Gogo Shell
 ```sh
 $ telenet localhost 11311
 g! lb|grep Salesforce
-  583|Active     |   10|Salesforce SOAP Client (1.0.1)
+  583|Active     |   10|Salesforce SOAP Client (1.0.2)
 ```
 Console 2 - Verify the bundle just installed
 
 ### 3. How to install in Apache Karaf 4.x
-As described earlier, this bundle can be installed on any [OSGi R6](https://www.osgi.org/developer/downloads/release-6/) compliant container, Apache Karaf is one of these containers. So let's see how to install the bundle.
+As described earlier, this bundle can be installed on any [OSGi R6](https://www.osgi.org/developer/downloads/release-6/) 
+compliant container, Apache Karaf is one of these containers. So let's see how to install the bundle.
 
 ```sh
-karaf@root()> install http://repo1.maven.org/maven2/it/dontesta/labs/liferay/salesforce/client/soap/salesforce-client-soap/1.0.1/salesforce-client-soap-1.0.1.jar
+karaf@root()> install http://repo1.maven.org/maven2/it/dontesta/labs/liferay/salesforce/client/soap/salesforce-client-soap/1.0.2/salesforce-client-soap-1.0.2.jar
 Bundle ID: 52
 karaf@root()> start 52
 ```
@@ -116,7 +123,7 @@ karaf@root()> list 52
 START LEVEL 100 , List Threshold: 50
 ID │ State  │ Lvl │ Version │ Name
 ───┼────────┼─────┼─────────┼──────────────────────────────────────────────────────────────────────────────────────────
-52 │ Active │  80 │ 1.0.1   │ Salesforce SOAP Client
+52 │ Active │  80 │ 1.0.2   │ Salesforce SOAP Client
 ```
 Console 4 - Verify the bundle just installed
 
@@ -137,11 +144,13 @@ If you follow this resources you could see how to use Salesforce SOAP API.
 
 1. [Introducing SOAP API](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_quickstart_intro.htm)
 2. [Force.com Web Service Connector (WSC)](https://github.com/forcedotcom/wsc)
+3. [Salesforce Liferay Gogo Shell Command Client](https://www.dontesta.it/en/liferay-7-salesforce-com-gogo-shell-command-client/)
 
 ### Project License
 The MIT License (MIT)
 
-Copyright &copy; 2017 Antonio Musarra's Blog - [https://www.dontesta.it](https://www.dontesta.it "Antonio Musarra's Blog") , [antonio.musarra@gmail.com](mailto:antonio.musarra@gmail.com "Antonio Musarra Email")
+Copyright &copy; 2017 Antonio Musarra's Blog - [https://www.dontesta.it](https://www.dontesta.it "Antonio Musarra's Blog") , 
+[antonio.musarra@gmail.com](mailto:antonio.musarra@gmail.com "Antonio Musarra Email")
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

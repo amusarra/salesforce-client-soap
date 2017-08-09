@@ -5,7 +5,7 @@ Bundle-Version: 1.0.0-SNAPSHOT
 Bundle-Category: Salesforce
 Bundle-ContactAddress: https://www.dontesta.it/contatti/
 Bundle-Developers: antonio.musarra@gmail.com
-Bundle-DocURL: https://www.dontesta.it/salesforce-client
+Bundle-DocURL: https://www.dontesta.it/salesforce-client-soap
 Bundle-Copyright: Antonio Musarra's Blog (c) 2017
 Bundle-License: MIT License
 Bundle-Icon: Console

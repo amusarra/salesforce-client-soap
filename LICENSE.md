@@ -1,6 +1,7 @@
 MIT License
 
-Salesforce SOAP API Client
+Salesforce SOAP API Client OSGi Bundle
+
 Copyright (c) 2017 Antonio Musarra's Blog - https://www.dontesta.it
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

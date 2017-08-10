@@ -5,8 +5,8 @@
     <groupId>it.dontesta.labs.liferay.salesforce.client.soap</groupId>
     <artifactId>salesforce-client-soap</artifactId>
     <version>1.0.3-SNAPSHOT</version>
-    <name>Salesforce SOAP API Client</name>
-    <description>Salesforce SOAP API Client build with Force.com Web Service Connector (WSC) v40.1.1</description>
+    <name>Salesforce SOAP API Client OSGi Bundle</name>
+    <description>Salesforce SOAP API Client OSGi Bundle build with Force.com Web Service Connector (WSC) v40.1.1</description>
     <url>https://www.dontesta.it/salesforce-client-soap</url>
     <inceptionYear>2017</inceptionYear>
     <licenses>

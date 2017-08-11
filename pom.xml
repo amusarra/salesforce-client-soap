@@ -34,6 +34,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <salesforce.wsdl.partner.path>${basedir}/src/main/resources/META-INF/wsdl/partner.wsdl</salesforce.wsdl.partner.path>
         <salesforce.wsdl.enterprise.path>${basedir}/src/main/resources/META-INF/wsdl/enterprise.wsdl</salesforce.wsdl.enterprise.path>
+        <gpg.skip>true</gpg.skip>
         <java.source>1.8</java.source>
         <java.target>1.8</java.target>
     </properties>
@@ -123,6 +124,9 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <skip>${gpg.skip}</skip>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>

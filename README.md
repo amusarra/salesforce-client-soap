@@ -138,7 +138,14 @@ $ mvn clean package
 ```
 Console 5 - Clone & Build the OSGi bundle
 
-Inside the target directory you will find the OSGi bundle JAR (for example: salesforce-client-soap-1.0.2-SNAPSHOT.jar).
+Inside the target directory you will find the OSGi bundle JAR (for example: salesforce-client-soap-1.0.3-SNAPSHOT.jar).
+Remember that if you add this bundle as dependency (maven, gradle, etc.) then 
+**you must install bundle in local or remote repository**, for installing to local repository, just run maven with install goal.
+
+```bash
+$ mvn clean install
+```
+Console 6 - Install bundle in local maven repository
 
 ### 5. Build OSGi bundle with its own Enterprise WSDL
 If you want can build OSGi bundle with its own Enterprise WSDL then you proceed:
@@ -158,6 +165,14 @@ $ mvn -Dsalesforce.wsdl.enterprise.path=$YOUR_ABSOLUTE_PATH_ENTEPRISE_WSDL clean
 ```
 
 Inside the target directory you will find the OSGi bundle JAR (for example: salesforce-client-soap-1.0.3-SNAPSHOT.jar).
+Remember that if you add this bundle as dependency (maven, gradle, etc.) then 
+**you must install bundle in local or remote repository**, for installing to local repository, just run maven with install goal.
+
+```bash
+$ mvn -Dsalesforce.wsdl.enterprise.path=$YOUR_ABSOLUTE_PATH_ENTEPRISE_WSDL clean install
+```
+Console 7 - Install bundle in local maven repository
+
 The following figure shows the content of the bundle showing the custom object of my Salesforce.com instance.
 
 [![Salesforce SOAP API Client OSGi Bundle build from custom Enterprise WSDL](https://www.dontesta.it/wp-content/uploads/2017/08/SalesforceSOAPAPIClientOSGiBundleBuildFromCustomEnterpriseWSDL.png)](https://www.dontesta.it/wp-content/uploads/2017/08/SalesforceSOAPAPIClientOSGiBundleBuildFromCustomEnterpriseWSDL.png)

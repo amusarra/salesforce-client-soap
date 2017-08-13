@@ -149,6 +149,7 @@
                             <directory>${basedir}/libs</directory>
                             <includes>
                                 <include>partner-${project.version}.jar</include>
+                                <include>enterprise-${project.version}.jar</include>
                             </includes>
                             <followSymlinks>false</followSymlinks>
                         </fileset>

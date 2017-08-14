@@ -182,8 +182,31 @@ The figure below shows the use of the OSGi bundle just created as a dependency o
 
 [![Salesforce Liferay Gogo Shell Command Client Usage Enterprise SObject](https://www.dontesta.it/wp-content/uploads/2017/08/SalesforceLiferayGogoShellCommandClientUsageEnterpriseSObject.png)](https://www.dontesta.it/wp-content/uploads/2017/08/SalesforceLiferayGogoShellCommandClientUsageEnterpriseSObject.png)
 
+### 6. Building error on Windows platform
+For those who use Windows 7/8/10 it is possible to encounter a problem during the build phase. 
+This error was reported to me by a Liferay community user by this post [Liferay Salesforce.com integration](https://web.liferay.com/it/community/forums/-/message_boards/view_message/93104502#_19_message_93044555)
+The following error occurs when running the WSC tool that generates Partner and Enterprise stubs.
 
-### 6. Resources
+```
+java.lang.ClassNotFoundException: com.sun.tools.javac.Main
+Error: Unable to find compiler. Make sure that tools.jar is in your classpath: java.lang.ClassNotFoundException: com.sun.tools.javac.Main
+```
+
+The figure shows the error and reports the cause of the error.
+
+[![Salesforce Client SOAP API Client OSGi Bundle - Build error on Windows platform](https://www.dontesta.it/wp-content/uploads/2017/08/SalesforceClientSoapErrorMavenBuildOnWindowsPlatform.png)](https://www.dontesta.it/wp-content/uploads/2017/08/SalesforceClientSoapErrorMavenBuildOnWindowsPlatform.png)
+
+To solve this problem is enough:
+
+1. export JAVA_HOME
+2. export PATH. **It is important that the Java path precedes everyone else.**
+
+```
+set JAVA_HOME=C:\Program Files\Java\jdk1.8.0_144
+set PATH=%JAVA_HOME%\bin;%PATH%
+```
+
+### 7. Resources
 If you follow this resources you could see how to use Salesforce SOAP API.
 
 1. [Introducing SOAP API](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_quickstart_intro.htm)

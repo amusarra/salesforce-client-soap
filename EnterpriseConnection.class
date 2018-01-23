@@ -1,3 +1,15 @@
+
+import com.sforce.soap.enterprise.sobject.SObject;
+import com.sforce.ws.ConnectionException;
+import com.sforce.ws.ConnectorConfig;
+import com.sforce.ws.bind.TypeMapper;
+import com.sforce.ws.bind.XMLizable;
+import com.sforce.ws.transport.SoapConnection;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map.Entry;
+import javax.xml.namespace.QName;
+
 public class EnterpriseConnection
 {
   private TypeMapper __typeMapper = new TypeMapper();

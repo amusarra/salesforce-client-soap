@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>it.dontesta.labs.liferay.salesforce.client.soap</groupId>
     <artifactId>salesforce-client-soap</artifactId>
-    <version>1.1.0-SNAPSHOT</version>
+    <version>1.1.0</version>
     <name>Salesforce SOAP API Client OSGi Bundle</name>
     <description>Salesforce SOAP API Client OSGi Bundle build with Force.com Web Service Connector (WSC) v40.1.1</description>
     <url>https://www.dontesta.it/salesforce-client-soap</url>
@@ -264,7 +263,7 @@
         <connection>scm:git:git@github.com:amusarra/salesforce-client-soap.git</connection>
         <url>scm:git:git@github.com:amusarra/salesforce-client-soap.git</url>
         <developerConnection>scm:git:git@github.com:amusarra/salesforce-client-soap.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>salesforce-client-soap-1.1.0</tag>
     </scm>
     <issueManagement>
         <url>https://github.com/amusarra/salesforce-client-soap/issues</url>

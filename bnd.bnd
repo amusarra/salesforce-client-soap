@@ -1,12 +1,12 @@
 Bundle-Name: Salesforce SOAP API Client OSGi Bundle
 Bundle-SymbolicName: it.dontesta.labs.liferay.salesforce.client.soap
 Bundle-Description: Salesforce SOAP API Client OSGi bundle build with Force.com Web Service Connector (WSC)
-Bundle-Version: 1.0.0-SNAPSHOT
+Bundle-Version: ${project.version}
 Bundle-Category: Salesforce
 Bundle-ContactAddress: https://www.dontesta.it/contatti/
 Bundle-Developers: antonio.musarra@gmail.com
 Bundle-DocURL: https://www.dontesta.it/salesforce-client-soap
-Bundle-Copyright: Antonio Musarra's Blog (c) 2017
+Bundle-Copyright: Antonio Musarra's Blog (c) 2018
 Bundle-License: MIT License
 Bundle-Icon: Console
 Bundle-Vendor: Antonio Musarra's Blog

@@ -123,9 +123,6 @@
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
-                    <skip>${gpg.skip}</skip>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>

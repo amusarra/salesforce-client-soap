@@ -5,8 +5,8 @@ Bundle-Version: ${project.version}
 Bundle-Category: Salesforce
 Bundle-ContactAddress: https://www.dontesta.it/contatti/
 Bundle-Developers: antonio.musarra@gmail.com
-Bundle-DocURL: https://www.dontesta.it/salesforce-client-soap
-Bundle-Copyright: Antonio Musarra's Blog (c) 2018
+Bundle-DocURL: https://www.dontesta.it/2017/08/25/liferay-7-un-esempio-integrazione-con-salesforce-com/
+Bundle-Copyright: Antonio Musarra's Blog (c) 2019
 Bundle-License: MIT License
 Bundle-Icon: Console
 Bundle-Vendor: Antonio Musarra's Blog

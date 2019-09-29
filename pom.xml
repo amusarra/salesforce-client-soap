@@ -68,7 +68,7 @@
         <dependency>
             <groupId>com.force.api</groupId>
             <artifactId>force-wsc</artifactId>
-            <version>44.0.0</version>
+            <version>47.0.0</version>
         </dependency>
     </dependencies>
     <build>
@@ -165,11 +165,11 @@
                         <id>install-external-force-wsc</id>
                         <phase>clean</phase>
                         <configuration>
-                            <file>${basedir}/libs/force-wsc-44.0.0-uber.jar</file>
+                            <file>${basedir}/libs/force-wsc-47.0.0-uber.jar</file>
                             <repositoryLayout>default</repositoryLayout>
                             <groupId>com.force.api</groupId>
                             <artifactId>force-wsc-uber</artifactId>
-                            <version>44.0.0</version>
+                            <version>47.0.0</version>
                             <packaging>jar</packaging>
                             <generatePom>true</generatePom>
                         </configuration>
@@ -195,7 +195,7 @@
                             <arguments>
                                 <argument>-DcompileTarget=${java.source}</argument>
                                 <argument>-jar</argument>
-                                <argument>${basedir}/libs/force-wsc-44.0.0-uber.jar</argument>
+                                <argument>${basedir}/libs/force-wsc-47.0.0-uber.jar</argument>
                                 <argument>${salesforce.wsdl.partner.path}</argument>
                                 <argument>${basedir}/libs/partner-${project.version}.jar</argument>
                             </arguments>
@@ -212,7 +212,7 @@
                             <arguments>
                                 <argument>-DcompileTarget=${java.source}</argument>
                                 <argument>-jar</argument>
-                                <argument>${basedir}/libs/force-wsc-44.0.0-uber.jar</argument>
+                                <argument>${basedir}/libs/force-wsc-47.0.0-uber.jar</argument>
                                 <argument>${salesforce.wsdl.enterprise.path}</argument>
                                 <argument>${basedir}/libs/enterprise-${project.version}.jar</argument>
                             </arguments>
